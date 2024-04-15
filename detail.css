@@ -1,0 +1,127 @@
+body {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee; 
+  color: #ffffff; 
+  flex-wrap: wrap;
+  border: 2px solid #111;
+  min-width: 400px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+.top-wrapper{
+  display: flex;
+  width: 96vw;
+  padding: 0 2vw;
+  min-height: 80px;
+  top: 0;
+  background-color: #eeeeee;
+  justify-content: space-between;
+  align-items: center;
+  color: #111;
+  border-bottom: 2px solid #111;
+  flex-wrap: wrap;
+}
+
+.title{
+  font-size: 25px;
+  font-weight: bold;
+}
+.datasource{
+  font-size: 25px;
+  font-weight: bold;
+}
+.form-container {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #eeeeee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+  width: calc(30vw - 2px);
+  border: 1px solid #222;
+  font-size: 18px;
+}
+
+
+
+.form-group label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold; 
+  width: 30%;
+  padding: 0 5%;
+  border-right: 2px dotted #222;
+}
+
+
+.doubleWidth{
+  width: calc(60vw - 2px) !important;
+}
+
+.form-group p {
+  text-align: center;
+  width: 56%;
+  padding: 0 2%;
+  font-weight: bold;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  height: 40px;
+  color:#333;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.btn {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  margin-top: -6px;
+}
+
+.btn:hover {
+  color: black;
+}
+
+#oid{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 8px;
+}
+
+@media (max-width:1000px){
+  .form-group{
+    width: 90vw;
+  }
+  .doubleWidth{
+    width: 90vw !important;
+  }
+}

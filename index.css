@@ -1,0 +1,83 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    border: 2px solid #333;
+    background-color: #eee;
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+  .top-wrapper{
+    display: flex;
+    width: calc(96vw - 20px);
+    padding: 0 2vw;
+    min-height: 80px;
+    top: 0;
+    background-color: #eeeeee;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #111;
+    border-bottom: 2px solid #111;
+  }
+  
+  .title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .datasource{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  #filter-options{
+    width: calc(100vw - 40px);
+    
+  }
+  .checkbox-group {
+    border-bottom: 2px solid #333;
+    padding: 10px 20px;
+    width: calc(100vw - 60px);
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .filterTitle{
+    font-weight: bold;
+  }
+  .checkbox-group label {
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-group input{
+    width: 20px;
+    height: 16px;
+    cursor: pointer;
+    background-color: #eee !important;
+  }
+  #data-display{
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100vw - 80px);
+    padding: 10px 20px;
+  }
+  .data-row {
+    /* border: 1px solid #333; */
+    padding: 10px 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tooltip{
+    position: absolute;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
