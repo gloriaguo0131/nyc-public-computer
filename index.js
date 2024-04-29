@@ -152,6 +152,6 @@ function hideTooltip() {
 }
 
 function redirectToPage(parameter) {
-    var url = '/detail' + '?vid=' + parameter;
+    var url = './detail' + '?vid=' + parameter;
     window.location.href = url;
 }

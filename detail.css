@@ -5,7 +5,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eee; 
   color: #ffffff; 
   flex-wrap: wrap;
   border: 2px solid #111;
@@ -22,7 +21,6 @@ a {
   padding: 0 2vw;
   min-height: 80px;
   top: 0;
-  background-color: #eeeeee;
   justify-content: space-between;
   align-items: center;
   color: #111;
@@ -42,7 +40,6 @@ a {
   width: 90vw;
   display: flex;
   flex-wrap: wrap;
-  background-color: #eeeeee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   margin-top: 20px;
   color: #222;
