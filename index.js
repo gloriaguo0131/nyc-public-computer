@@ -34,17 +34,22 @@ document.addEventListener("DOMContentLoaded", function() {
             label.textContent = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ') + ':';
             checkboxGroup.appendChild(label);
             filters[key].forEach(value => {
-                const choose = document.createElement('div');
-                choose.classList.add('choose')
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.value = value;
-                checkbox.addEventListener('change', applyFilters);
-                const checkboxLabel = document.createElement('label');
-                checkboxLabel.textContent = value;
-                choose.appendChild(checkbox);
-                choose.appendChild(checkboxLabel);
-                checkboxGroup.append(choose)
+                if(value != 'Temporarily Closed' && value != 'Not operating'){
+                  if(value == 'Temporarily closed'){
+                    value = 'Temporarily Closed'
+                  }
+                  const choose = document.createElement('div');
+                  choose.classList.add('choose')
+                  const checkbox = document.createElement('input');
+                  checkbox.type = 'checkbox';
+                  checkbox.value = value;
+                  checkbox.addEventListener('change', applyFilters);
+                  const checkboxLabel = document.createElement('label');
+                  checkboxLabel.textContent = value;
+                  choose.appendChild(checkbox);
+                  choose.appendChild(checkboxLabel);
+                  checkboxGroup.append(choose)
+                }
 
             });
             filterOptions.appendChild(checkboxGroup);
