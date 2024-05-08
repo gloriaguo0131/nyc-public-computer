@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     function renderData(data) {
         const totalNumber = document.getElementById('totalNumber')
-        totalNumber.innerHTML = "Total Numer: " + data.length
+        totalNumber.innerHTML = "Total Number: " + data.length
       dataDisplay.innerHTML = '';
       data.forEach(entry => {
         const row = document.createElement('div');
