@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             checkboxGroup.classList.add('checkbox-group');
             const label = document.createElement('label');
             label.classList.add('filterTitle')
-            label.textContent = key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ') + ':';
+            label.textContent = capitalizeFirstLetter(key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ')) + ':';
             checkboxGroup.appendChild(label);
             filters[key].forEach(value => {
                 if(value != 'Temporarily Closed' && value != 'Not operating'){
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
                   checkbox.value = value;
                   checkbox.addEventListener('change', applyFilters);
                   const checkboxLabel = document.createElement('label');
-                  checkboxLabel.textContent = value;
+                  checkboxLabel.textContent = capitalizeFirstLetter(value);
                   choose.appendChild(checkbox);
                   choose.appendChild(checkboxLabel);
                   checkboxGroup.append(choose)
@@ -159,4 +159,10 @@ function hideTooltip() {
 function redirectToPage(parameter) {
     var url = './detail' + '?vid=' + parameter;
     window.location.href = url;
+}
+
+function capitalizeFirstLetter(str) {
+  return str.replace(/\b\w/g, function(char) {
+      return char.toUpperCase();
+  });
 }
