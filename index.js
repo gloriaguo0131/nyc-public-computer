@@ -34,22 +34,22 @@ document.addEventListener("DOMContentLoaded", function() {
             label.textContent = capitalizeFirstLetter(key.charAt(0).toUpperCase() + key.slice(1).replace(/_/g, ' ')) + ':';
             checkboxGroup.appendChild(label);
             filters[key].forEach(value => {
-                if(value != 'Temporarily Closed' && value != 'Not operating'){
-                  if(value == 'Temporarily closed'){
-                    value = 'Temporarily Closed'
-                  }
-                  const choose = document.createElement('div');
-                  choose.classList.add('choose')
-                  const checkbox = document.createElement('input');
-                  checkbox.type = 'checkbox';
-                  checkbox.value = value;
-                  checkbox.addEventListener('change', applyFilters);
-                  const checkboxLabel = document.createElement('label');
-                  checkboxLabel.textContent = capitalizeFirstLetter(value);
-                  choose.appendChild(checkbox);
-                  choose.appendChild(checkboxLabel);
-                  checkboxGroup.append(choose)
-                }
+              if(value != 'Temporarily Closed' && value != 'Not operating'){
+                // if(value == 'Temporarily closed'){
+                //   value = 'Temporarily Closed'
+                // }
+                const choose = document.createElement('div');
+                choose.classList.add('choose')
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = value;
+                checkbox.addEventListener('change', applyFilters);
+                const checkboxLabel = document.createElement('label');
+                checkboxLabel.textContent = capitalizeFirstLetter(value);
+                choose.appendChild(checkbox);
+                choose.appendChild(checkboxLabel);
+                checkboxGroup.append(choose)
+              }
 
             });
             filterOptions.appendChild(checkboxGroup);
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     function renderData(data) {
         const totalNumber = document.getElementById('totalNumber')
-        totalNumber.innerHTML = "Total Number: " + data.length
+        totalNumber.innerHTML = "Total Nubmer: " + data.length
       dataDisplay.innerHTML = '';
       data.forEach(entry => {
         const row = document.createElement('div');
@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.querySelectorAll('input[type="checkbox"]:checked').forEach(checkbox => {
         const key = reverseTransformation(checkbox.parentNode.parentNode.firstElementChild.textContent)
         const value = checkbox.value;
+        console.log(value)
         if (!filters[key]) {
           filters[key] = new Set();
         }
@@ -104,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
       const filteredData = data.filter(entry => {
         return Object.keys(filters).every(key => {
+          console.log(key)
           return filters[key].has(entry[key]);
         });
       });
@@ -114,10 +116,10 @@ document.addEventListener("DOMContentLoaded", function() {
   
 
   function reverseTransformation(str) {
-    const lowerCaseStr = str.charAt(0).toLowerCase() + str.slice(1);
-    const underscoreStr = lowerCaseStr.replace(/[A-Z]/g, match => '_' + match.toLowerCase());
-    const originalStr = underscoreStr.replace(/:/g, '').replace(/ /g, '_');
-    return originalStr;
+    // const lowerCaseStr = str.charAt(0).toLowerCase() + str.slice(1);
+    // const underscoreStr = lowerCaseStr.replace(/[A-Z]/g, match => '_' + match.toLowerCase());
+    // const originalStr = underscoreStr.replace(/:/g, '').replace(/ /g, '_');
+    return str.replace(/ /g, "_").replace(":", "").toLowerCase();
 }
 
 
